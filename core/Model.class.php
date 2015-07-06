@@ -6,6 +6,9 @@
  * @author Ardalan Samimi
  */
 
+namespace vendor\hyperion\hyperion\core;
+use vendor\hyperion\hyperion\library\Database;
+
 class Model {
 
 	/**

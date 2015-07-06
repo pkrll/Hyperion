@@ -5,7 +5,7 @@
 * @author Ardalan Samimi
 */
 
-namespace vendor\pkrll\hyperion\library;
+namespace vendor\hyperion\hyperion\library;
 
 final class Session {
 

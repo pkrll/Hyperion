@@ -1,4 +1,6 @@
 <?php
+namespace vendor\pkrll\hyperion\core;
+use vendor\pkrll\hyperion\library\Database;
 
 final class Bootstrap {
 

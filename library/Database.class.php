@@ -1,5 +1,8 @@
 <?php
 
+namespace vendor\hyperion\hyperion\library;
+use \PDO;
+use \PDOException;
 
 final class Database {
 

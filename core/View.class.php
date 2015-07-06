@@ -12,6 +12,8 @@
  * @author Ardalan Samimi
  */
 
+namespace vendor\pkrll\hyperion\core;
+
 class View {
 
 	/**

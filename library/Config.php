@@ -13,9 +13,8 @@ define(PASSWORD, "");
 define(DATABASE, "");
 
 // REQUIRED SYSTEM FILES
-require_once("core/Bootstrap.class.php");
-require_once("core/Controller.class.php");
-require_once("core/Model.class.php");
-require_once("core/View.class.php");
-require_once("Database.class.php");
-require_once("Session.class.php");
+require_once("vendor/hyperion/hyperion/core/Bootstrap.class.php");
+require_once("vendor/hyperion/hyperion/core/Controller.class.php");
+require_once("vendor/hyperion/hyperion/core/Model.class.php");
+require_once("vendor/hyperion/hyperion/core/View.class.php");
+require_once("vendor/hyperion/hyperion/library/Database.class.php");
