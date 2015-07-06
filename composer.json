@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-               "saturn\\hyperion\\": "vendor/satun/hyperion/core"
+               "saturn\\hyperion\\": "/core"
            }
     }
 }
