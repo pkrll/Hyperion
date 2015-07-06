@@ -16,10 +16,5 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.5.24"
-    },
-    "autoload": {
-        "psr-4": {
-               "saturn\\hyperion\\": "/core"
-           }
     }
 }
