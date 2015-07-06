@@ -1,0 +1,19 @@
+{
+    "name": "Hyperion",
+    "version": "1.0",
+    "description": "Lightweight MVC framework",
+    "authors": [
+        {
+            "name": "Ardalan Samimi",
+            "role": "Developer"
+        }
+    ],
+    "keywords": [
+        "Hyperion", "Framework"
+    ],
+    "license": "GPL-2.0",
+    "homepage": "https://github.com/pkrll/Hyperion",
+    "require": {
+        "php": ">=5.5.24"
+    }
+}
