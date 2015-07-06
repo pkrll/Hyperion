@@ -1,5 +1,6 @@
 <?php
 
+
 final class Database {
 
 	private $connection;

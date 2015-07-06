@@ -11,6 +11,7 @@
  *
  * @author Ardalan Samimi
  */
+
 class View {
 
 	/**
