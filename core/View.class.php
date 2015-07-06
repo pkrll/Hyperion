@@ -12,7 +12,7 @@
  * @author Ardalan Samimi
  */
 
-namespace vendor\pkrll\hyperion\core;
+namespace vendor\saturn\hyperion\core;
 
 class View {
 

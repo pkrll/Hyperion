@@ -5,7 +5,7 @@
 * @author Ardalan Samimi
 */
 
-namespace vendor\hyperion\hyperion\library;
+namespace vendor\saturn\hyperion\library;
 
 final class Session {
 

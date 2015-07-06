@@ -1,6 +1,6 @@
 <?php
-namespace vendor\pkrll\hyperion\core;
-use vendor\pkrll\hyperion\library\Database;
+namespace vendor\saturn\hyperion\core;
+use vendor\saturn\hyperion\library\Database;
 
 final class Bootstrap {
 
