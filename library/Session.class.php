@@ -4,7 +4,6 @@
 *
 * @author Ardalan Samimi
 */
-
 namespace Hyperion;
 
 final class Session {

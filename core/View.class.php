@@ -11,7 +11,6 @@
  *
  * @author Ardalan Samimi
  */
-
 namespace Hyperion;
 
 class View {

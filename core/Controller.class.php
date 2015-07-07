@@ -7,7 +7,6 @@
  *
  * @author Ardalan Samimi
  */
-
 namespace Hyperion;
 
 class Controller {

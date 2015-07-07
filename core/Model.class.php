@@ -5,9 +5,7 @@
  *
  * @author Ardalan Samimi
  */
-
 namespace Hyperion;
-use Hyperion\Database;
 
 class Model {
 

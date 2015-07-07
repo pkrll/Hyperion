@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Database class
+ *
+ * @author Ardalan Samimi
+ **/
 namespace Hyperion;
 use \PDO;
 use \PDOException;

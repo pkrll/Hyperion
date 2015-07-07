@@ -1,8 +1,8 @@
 # Hyperion
 A lightweight, sucky MVC platform.
 
-## How to use?
-### Download
+## Installation
+### Using Composer
 
 ## License
 This project is licensed under the GNU General Public License v2.0.

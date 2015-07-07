@@ -1,6 +1,5 @@
 <?php
 namespace Hyperion;
-use Hyperion\Database;
 
 final class Bootstrap {
 
