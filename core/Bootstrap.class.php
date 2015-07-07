@@ -1,6 +1,6 @@
 <?php
-namespace vendor\saturn\hyperion\core;
-use vendor\saturn\hyperion\library\Database;
+namespace hyperion;
+use hyperion\Database;
 
 final class Bootstrap {
 
