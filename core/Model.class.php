@@ -6,8 +6,8 @@
  * @author Ardalan Samimi
  */
 
-namespace vendor\saturn\hyperion\core;
-use vendor\saturn\hyperion\library\Database;
+namespace Hyperion;
+use Hyperion\Database;
 
 class Model {
 

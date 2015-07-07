@@ -1,6 +1,6 @@
 <?php
 
-namespace vendor\saturn\hyperion\library;
+namespace Hyperion;
 use \PDO;
 use \PDOException;
 

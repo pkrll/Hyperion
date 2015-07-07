@@ -1,5 +1,6 @@
 {
     "name": "saturn/hyperion",
+    "version": "1.0",
     "description": "Lightweight MVC framework",
     "type": "project",
     "keywords": [
@@ -18,6 +19,6 @@
         "php": ">=5.5.24"
     },
     "autoload": {
-        "psr-4": { "hyperion\\": "core/" }
+        "psr-0": { "Hyperion": "core/" }
     }
 }
