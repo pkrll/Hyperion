@@ -17,8 +17,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.5.24",
-        "mnsami/composer-custom-directory-installer": "1.0.*",
-        "saturn/hyperion": "dev-master"
+        "mnsami/composer-custom-directory-installer": "1.0.*"
     },
     "extra": {
         "installer-paths":{
