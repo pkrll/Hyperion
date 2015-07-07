@@ -18,6 +18,6 @@
         "php": ">=5.5.24"
     },
     "autoload": {
-        "psr-0": { "hyperion": "core/", "hyperion\\library": "library/" }
+        "psr-4": { "hyperion\\": "core/" }
     }
 }
