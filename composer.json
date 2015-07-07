@@ -18,8 +18,8 @@
         "php": ">=5.5.24"
     },
     "autoload": {
-        "psr-4": {
-               "saturn\\hyperion\\": "vendor/saturn/hyperion/core"
-           }
+        "autoload": {
+            "psr-0": { "": "vendor/saturn/hyperion/" }
+        }
     }
 }
