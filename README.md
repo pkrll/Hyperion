@@ -1,8 +1,8 @@
-## Hyperion
+## Hyperion [![Latest Stable Version](https://poser.pugx.org/saturn/hyperion/v/stable)](https://packagist.org/packages/saturn/hyperion) [![License](https://poser.pugx.org/saturn/hyperion/license)](https://packagist.org/packages/saturn/hyperion)
 A lightweight MVC platform.
 
 ### Installation
-#### Using Composer
+##### Using Composer
 ```bash
 $ composer require saturn/hyperion
 ```
