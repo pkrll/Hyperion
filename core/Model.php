@@ -5,10 +5,11 @@
  * message creation.
  *
  * @author Ardalan Samimi
- * @version 1.0.1
+ * @version 1.0.2
  */
 namespace hyperion\core;
 use hyperion\library\Database;
+use \PDO;
 
 class Model {
 
@@ -138,7 +139,7 @@ class Model {
         $execution = $this->execute($query, $params);
         if ($execution !== TRUE)
             return $execution;
-        return $this->database->lastInsertedId();
+        return $this->database->lastInsertId();
     }
 
     /**

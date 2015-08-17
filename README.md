@@ -129,8 +129,9 @@ class ExampleModel extends Model {
 </html>
 ```
 #### Database support
-Want to use a database? You got it. Wouldn't be SHAF apping otherwise. Hyperion comes with a simple Database class (using PDO), which supports MySQL. To make it super-easy and **EXTREMELY WSSHAF** (let's call it **EWSSHAF**) for you, the base model, that all your model classes extend, comes with a bunch of method for accessing simple and basic PDO commands. Below follows a list you can use when creating your **EWSSHAF** app.
+Want to use a database? You got it. Wouldn't be SHAF apping otherwise. Hyperion comes with a simple Database class (using PDO), which supports MySQL. To make it super-easy and **EXTREMELY WSSHAF** (let's call it **EWSSHAF**) for you, the base model, that all your model classes extend, comes with a bunch of method for accessing simple and basic PDO commands. Below follows a list of methods you can use when creating your **EWSSHAF** app.
 ```php
+// Model.php
 /**
  * Prepare an SQL statement for execution.
  * @param   string  The SQL statement to prepare.
@@ -211,7 +212,7 @@ class ExampleModel extends Model {
         $this->prepare("SELECT Message FROM OverlordMessageBoard");
 
         // Call the read() method from the parent class Model.
-        $response = $this->read($sqlQuery);
+        $response = $this->read();
 
         // The above can also be written:
         // $response = $this->read("SELECT Message FROM OverlordMessageBoard");
@@ -226,10 +227,85 @@ What is a **DELICIOUS CEWSSHAF** (Oh you know it, **DCEWSSHAF**. Seriously, I ca
 use hyperion\core\Model;
 
 class ExampleModel extends Model {
+
+    public function addMessage($message) {
+        // The $message array would look like this:
+        // array(
+        //    "message" => "DCEWSSHAF apping!!",
+        //    "date" => time()
+        // );
+
+        $sqlQuery = "INSERT INTO Messages (message, date) VALUES(:message, :date)";
+        $this->prepare($sqlQuery);
+
+        $this->bindValue(":message", $message);
+        $this->bindValue(":date", time());
+
+        $response = $this->write();
+
+        return $response;
+    }
+
     public function deleteMessage($id) {
         $sqlQuery = "DELETE FROM Messages WHERE id = :id";
         $sqlParam = array("id"  => $id);
+        // We did not use prepare() – do not worry,
+        // the write/read methods will prepare the
+        // statement for your if supplied directly.
         $response = $this->write($sqlQuery, $sqlParam);
+        return $response;
+    }
+
+    // Lets do a more complicated example
+    public function addMessages(array $messages) {
+        // The $messages array looks like this:
+        // $messages[] = array(
+        //     "message"   => "Message 1",
+        //     "date"      => time()
+        // );
+        // $messages[] = array(
+        //     "message"   => "Message 2",
+        //     "date"      => time()
+        // );
+        // $messages[] = array(
+        //     "message"   => "Message 3",
+        //     "date"      => time()
+        // );
+
+        // Create the question marked placeholders, based on
+        // the number of values the row will take, (?,?...).
+        $markers = array_fill(0, count($messages[0]), '?');
+        $markers = '(' . implode(", ", $markers) . ')';
+
+        // The number of placeholders must match the number
+        // of values that are to be inserted in the VALUES-
+        // clause. Create the array with array_fill() and
+        // join the array with the query-string.
+        $sqlClause = array_fill(0, count($messages), $markers);
+        $sqlQuery = "INSERT INTO Messages (message, date) VALUES " . implode(", ", $sqlClause);
+
+        $this->prepare($sqlQuery);
+
+        // Bind the values using bindValue().
+        // Using question marked placeholders,
+        // the value must be 1-indexed, that
+        // is starting at position 1.
+        $index = 1;
+        foreach ($messages AS $key => $message) {
+            $this->bindValue($index++, $message['message']);
+            $this->bindValue($index++, $message['date']);
+        }
+
+        // A more pretty and dynamic way to write
+        // the above statement could be by going
+        // by the columns of the array, like so:
+        // $columns = array_keys($messages[0]);
+        //foreach ($messages AS $key => $message) {
+            // foreach ($columns AS $column)
+            //     $this->bindValue($position++, $messages[$column]);
+
+        // Write to database
+        $response = $this->write();
         return $response;
     }
 }

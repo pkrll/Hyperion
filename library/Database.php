@@ -4,7 +4,7 @@
  * The database driver used: MySQL.
  *
  * @author Ardalan Samimi
- * @version 1.0.1
+ * @version 1.0.2
  */
 namespace hyperion\library;
 use \PDO;
@@ -117,6 +117,46 @@ class Database {
     }
 
     /**
+     * Bind a value to a named or question mark placeholder
+     * in the prepared SQL statement.
+     *
+     * @param   mixed   The parameter identifier. For named
+     *                  placeholder, this value must be a
+     *                  string (:name). For a question mark
+     *                  placeholder, the value must be the
+     *                  1-indexed position of the parameter.
+     * @param   mixed   The value to bind to the parameter.
+     * @param   int     Data type for the parameter, using
+     *                  the predefined PDO constants:
+     *                  http://php.net/manual/en/pdo.constants.php
+     * @return  bool
+     */
+    public function bindValue($param, $value, $dataType) {
+		$response = $this->statement->bindValue($param, $value, $dataType);
+		return $response;
+	}
+
+    /**
+     * Bind a referenced variable to a named or question mark
+     * placeholder in the prepared SQL statement.
+     *
+     * @param   mixed   The parameter identifier. For named
+     *                  placeholder, this value must be a
+     *                  string (:name). For a question mark
+     *                  placeholder, the value must be the
+     *                  1-indexed position of the parameter.
+     * @param   mixed   Variable to bind to the parameter.
+     * @param   int     Data type for the parameter, using
+     *                  the predefined PDO constants:
+     *                  http://php.net/manual/en/pdo.constants.php
+     * @return  bool
+     */
+    public function bindParam($param, &$variable, $dataType) {
+		$response = $this->statement->bindParam($param, $variable, $dataType);
+		return $response;
+	}
+
+    /**
      * Number of rows affected by last operation.
      *
      * @return  int
@@ -130,8 +170,8 @@ class Database {
      *
      * @return  int
      */
-    public function lastInsertedId() {
-        return $this->connection->lastInsertedId();
+    public function lastInsertId() {
+        return $this->connection->lastInsertId();
     }
 
 }
