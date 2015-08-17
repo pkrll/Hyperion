@@ -5,7 +5,7 @@
  * message creation.
  *
  * @author Ardalan Samimi
- * @version 1.0.0
+ * @version 1.0.1
  */
 namespace hyperion\core;
 use hyperion\library\Database;
@@ -40,7 +40,7 @@ class Model {
      *                  supply to the query.
      * @return  array | bool
      */
-    final private function execute($query = NULL, $params = NULL) {
+    private function execute($query = NULL, $params = NULL) {
         if ($this->database === NULL)
             return $this->errorMessage("No database connection found.");
         if ($query !== NULL)

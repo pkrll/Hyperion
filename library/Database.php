@@ -4,7 +4,7 @@
  * The database driver used: MySQL.
  *
  * @author Ardalan Samimi
- * @version 1.0.0
+ * @version 1.0.1
  */
 namespace hyperion\library;
 use \PDO;
@@ -21,9 +21,9 @@ class Database {
     private $connection;
 
     /**
-     * The SQL statement.
+     * The PDO statement.
      *
-     * @var string
+     * @var PDOStatement
      * @access private
      **/
     private $statement;
