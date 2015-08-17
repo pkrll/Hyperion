@@ -82,6 +82,8 @@ All controllers must be placed inside the folder ``application/controllers``. Th
 
 ##### ExampleController.php
 ```php
+use hyperion\core\Controller;
+
 class ExampleController extends Controller {
     public function main () {
        // Let's get a message from our overlords
@@ -105,6 +107,8 @@ class ExampleController extends Controller {
 ```
 ##### ExampleModel.php
 ```php
+use hyperion\core\Model;
+
 class ExampleModel extends Model {
     public function getMessageFromOverlords() {
        // This is where the app logic goes
@@ -199,6 +203,8 @@ final protected function rowCount();
 Confused? Me too. But hey, let's see an example on how to use this to make **CUTE EWSSHAF** (Yup, you guessed it, **CEWSSHAF**! Okay, I need to stop...) applications.
 ```php
 // ExampleModel.php
+use hyperion\core\Model;
+
 class ExampleModel extends Model {
     public function getMessageFromOverlords() {
         // Prepare the query
@@ -217,6 +223,8 @@ class ExampleModel extends Model {
 What is a **DELICIOUS CEWSSHAF** (Oh you know it, **DCEWSSHAF**. Seriously, I can't stop, I have serious mental issues, help me...) without statements with -- PARAMETERS?!
 ```php
 // ExampleModel.php
+use hyperion\core\Model;
+
 class ExampleModel extends Model {
     public function deleteMessage($id) {
         $sqlQuery = "DELETE FROM Messages WHERE id = :id";
