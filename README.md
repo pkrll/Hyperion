@@ -78,7 +78,8 @@ $App = new Bootstrap();
 ```
 ### Usage
 All controllers must be placed inside the folder ``application/controllers``. The controllers must also abide to a specific naming convention, where the file and class name must start with a capital letter and end with Controller. Let's say we want to create a controller called **SHAF**. The file would then be called ``SHAFController.php``, while class is named ``SHAFController``. The controller classes must also extend the base controller, ``Controller``.
-    * Note: All controllers must have the default main-method, which will be called if the URL request does not specify any action (i.e. *hyperion.dev/example*). Method foo() is an example of when the URL request path is set and a parameter is passed along (i.e. *helium.dev/example/foo/bar*).
+
+* Note: All controllers must have the default main-method, which will be called if the URL request does not specify any action (i.e. *hyperion.dev/example*). Method foo() is an example of when the URL request path is set and a parameter is passed along (i.e. *hyperion.dev/example/foo/bar*).
 
 ##### ExampleController.php
 ```php
