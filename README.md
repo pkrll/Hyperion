@@ -3,7 +3,7 @@ Hyperion is the lightweight MVC framework that puts the **FUN** back in **progrF
 
 **BONUS FEATURE:** No sibling incest (which can't be said about the greek deity that stole our name).
 ### Requirements
-* PHP => 5.3.
+* PHP >= 5.3.
 * Apache web server, with support for mod_rewrite.
 * MySQL database (optional).
 
