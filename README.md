@@ -25,7 +25,7 @@ $ composer require saturn/hyperion
 #### Source code
 Of course, you can also download the source files or clone the git repository and manually add it to folder of your choice. It is recommended that you put in a separate folder at the root level, for example ``hyperion``.
 ```bash
-$ git clone git://github.com/pkrll/Helium.git
+$ git clone git://github.com/pkrll/Hyperion.git
 ```
 ### Setup
 * Hyperion depends on the below outlined folder structure. So recreate this structure:
