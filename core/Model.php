@@ -27,10 +27,10 @@ class Model {
      *
      **/
     final public function __construct() {
-        if (HOSTNAME !== FALSE || DATABASE !== FALSE || USERNAME !== FALSE || PASSWORD !== FALSE)
+        if (!empty(HOSTNAME) && !empty(DATABASE) && !empty(USERNAME) && !empty(PASSWORD))
             $this->database = new Database(HOSTNAME, DATABASE, USERNAME, PASSWORD);
         else
-            $this->database = FALSE;
+            $this->database = NULL;
     }
 
     /**
