@@ -106,6 +106,7 @@ class ExampleController extends Controller {
     }
 }
 ```
+Models follow the same naming convention as do Controllers and View classes.
 ##### ExampleModel.php
 ```php
 use hyperion\core\Model;
@@ -222,7 +223,7 @@ class ExampleModel extends Model {
     }
 }
 ```
-What is a **DELICIOUS CEWSSHAF** (Oh you know it, **DCEWSSHAF**. Seriously, I can't stop, I have serious mental issues, help me...) without statements with -- PARAMETERS?!
+What is a **DELICIOUS CEWSSHAF** (Oh you know it, **DCEWSSHAF**. Seriously, I can't stop, I have serious mental issues, help me...) application without statements with -- PARAMETERS?!
 ```php
 // ExampleModel.php
 use hyperion\core\Model;
@@ -239,8 +240,8 @@ class ExampleModel extends Model {
         $sqlQuery = "INSERT INTO Messages (message, date) VALUES(:message, :date)";
         $this->prepare($sqlQuery);
 
-        $this->bindValue(":message", $message);
-        $this->bindValue(":date", time());
+        $this->bindValue(":message", $message['message']);
+        $this->bindValue(":date", $message['date']);
 
         $response = $this->write();
 
