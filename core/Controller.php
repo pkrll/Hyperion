@@ -40,12 +40,11 @@ class Controller {
      /**
  	 * Load the Model and the View, and call
      * eventual methods that were requested.
-     * Cannot be overridden.
      *
  	 * @param   string  Optional. The requested method.
  	 * @param   array   Optional. Additional arguments.
  	 */
-    final public function __construct($method, $arguments = NULL) {
+    public function __construct($method, $arguments = NULL) {
         // Load the model and the view
         $this->setName(get_class($this));
         $this->loadview();

@@ -26,7 +26,7 @@ class Model {
      * Creates the database connection.
      *
      **/
-    final public function __construct() {
+    public function __construct() {
         if (!empty(HOSTNAME) && !empty(DATABASE) && !empty(USERNAME) && !empty(PASSWORD))
             $this->database = new Database(HOSTNAME, DATABASE, USERNAME, PASSWORD);
         else
