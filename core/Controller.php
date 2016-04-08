@@ -5,7 +5,7 @@
  * link between the presentation and data layer.
  *
  * @author Ardalan Samimi
- * @version 1.0.0
+ * @version 1.1.0
  */
 namespace hyperion\core;
 
@@ -53,10 +53,18 @@ class Controller {
         if (!is_null($arguments))
             $this->setArguments($arguments);
         // If the requested method does not
-		// exists, call the default method
-		// defined in const DEFAULT_METHOD.
-        if (!method_exists($this, $method))
-            $method = DEFAULT_METHOD;
+		    // exists, call the default method
+		    // defined in const DEFAULT_METHOD.
+        // Also, adds the requested method
+        // name to the arguments list.
+        if (!method_exists($this, $method)) {
+          if (is_null($this->arguments)) {
+            $this->arguments = Array();
+          }
+          array_unshift($this->arguments, $method);
+          $method = DEFAULT_METHOD;
+        }
+
         $this->$method();
     }
 
