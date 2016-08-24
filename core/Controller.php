@@ -52,7 +52,7 @@ class Controller {
         // Include the arguments if supplied.
         if (!is_null($arguments)) {
             $this->setArguments($arguments);
-        }
+        } else {
             $this->setArguments(Array());
         }
         // If the requested method does not
