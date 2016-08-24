@@ -32,7 +32,7 @@ define('DATABASE', "");
 define('APP_NAME', "Hyperion");
 define('APP_NAME_SHORT', "Hy");
 define('APP_DESCRIPTION', "Lightweight MVC");
-define('APP_VERSION', "1.1.1");
+define('APP_VERSION', "1.2.1");
 define('ROOT', 		    dirname(dirname(dirname(__DIR__))));
 define('CONTROLLERS',   ROOT.'/application/controllers');
 define('MODELS',        ROOT.'/application/models');

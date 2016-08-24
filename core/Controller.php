@@ -5,7 +5,7 @@
  * link between the presentation and data layer.
  *
  * @author Ardalan Samimi
- * @version 1.1.0
+ * @version 1.1.1
  */
 namespace hyperion\core;
 
@@ -50,8 +50,11 @@ class Controller {
         $this->loadview();
         $this->loadModel();
         // Include the arguments if supplied.
-        if (!is_null($arguments))
+        if (!is_null($arguments)) {
             $this->setArguments($arguments);
+        }
+            $this->setArguments(Array());
+        }
         // If the requested method does not
 		    // exists, call the default method
 		    // defined in const DEFAULT_METHOD.
