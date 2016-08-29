@@ -4,7 +4,7 @@
  * the Bootstrap class.
  *
  * @author Ardalan Samimi
- * @version 1.0.1
+ * @version 1.0.2
  */
 namespace hyperion\core;
 require_once(dirname(__DIR__)."/Config.php");
@@ -36,7 +36,7 @@ class Bootstrap {
      * @var string
      * @access private
      **/
-    private $arguments;
+    private $arguments = Array();
 
     /**
      * Get the requested page and initialize
@@ -92,8 +92,9 @@ class Bootstrap {
         // Set the file path of the controller,
         // and check if it is already included.
         $controller = $this->getPathOfController();
-        if (!class_exists($controller['className']))
+        if (!class_exists($controller['className'])) {
             include $controller['pathName'];
+        }
         // Create an instance of the controller
         new $controller['className']($this->method, $this->arguments);
     }
@@ -111,6 +112,12 @@ class Bootstrap {
         // If file does not exist, set the path
         // to the default controller.
         if (!file_exists($path)) {
+            // Prepend the requested method to the arguments list.
+            // This is necessary if the controller does not exist
+            // for the method to be included amongst the arguments.
+            if ($this->method !== DEFAULT_METHOD) {
+              array_unshift($this->arguments, $this->method);
+            }
             $name = DEFAULT_CONTROLLER.'Controller';
             $path = CONTROLLERS.'/'.$name.'.php';
             // Set the first part of the the request path
@@ -123,7 +130,5 @@ class Bootstrap {
             "pathName"  => $path
         );
     }
-
-
 
 }
