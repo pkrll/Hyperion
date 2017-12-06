@@ -1,6 +1,6 @@
 {
     "name": "saturn/hyperion",
-    "version": "1.2.3",
+    "version": "1.2.4",
     "description": "Lightweight MVC framework",
     "type": "library",
     "keywords": [

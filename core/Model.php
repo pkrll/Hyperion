@@ -42,14 +42,19 @@ class Model {
      * @return  array | bool
      */
     private function execute($query = NULL, $params = NULL) {
-        if ($this->database === NULL)
+        if ($this->database === NULL) {
             return $this->errorMessage("No database connection found.");
-        if ($query !== NULL)
+        }
+
+        if ($query !== NULL) {
             $this->database->prepare($query);
+        }
         // Execute the query, but brace for errors.
         $error = $this->database->execute($params);
-        if ($error !== NULL)
+        if ($error !== NULL) {
             return $this->errorMessage($error);
+        }
+        
         return TRUE;
     }
 

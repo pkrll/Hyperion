@@ -5,7 +5,7 @@
  * link between the presentation and data layer.
  *
  * @author Ardalan Samimi
- * @version 1.1.1
+ * @version 1.1.2
  */
 namespace hyperion\core;
 
@@ -44,22 +44,17 @@ class Controller {
  	 * @param   string  Optional. The requested method.
  	 * @param   array   Optional. Additional arguments.
  	 */
-    public function __construct($method, $arguments = NULL) {
-        // Load the model and the view
-        $this->setName(get_class($this));
+    public function __construct($method, $arguments = NULL, $name) {
+        $this->setName($name);
         $this->loadview();
         $this->loadModel();
-        // Include the arguments if supplied.
+
         if (!is_null($arguments)) {
             $this->setArguments($arguments);
         } else {
             $this->setArguments(Array());
         }
-        // If the requested method does not
-		    // exists, call the default method
-		    // defined in const DEFAULT_METHOD.
-        // Also, adds the requested method
-        // name to the arguments list.
+
         if (!method_exists($this, $method)) {
           if (is_null($this->arguments)) {
             $this->arguments = Array();
@@ -81,8 +76,7 @@ class Controller {
         // name as requested controller.
         $name = $this->name.'View';
         $path = VIEWS.'/'.$name.'.php';
-        // If it does not exist, go with
-        // the default View class.
+
         if (!file_exists($path)) {
             $this->setView(new View());
         } else {
@@ -102,8 +96,7 @@ class Controller {
         // name as requested controller.
         $name = $this->name.'Model';
         $path = MODELS.'/'.$name.'.php';
-        // If it does not exist, go with
-        // the default Model class.
+
         if (!file_exists($path)) {
             $this->setModel(new Model());
         } else {

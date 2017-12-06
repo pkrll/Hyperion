@@ -64,13 +64,14 @@ class View {
      * @param   string  Name of template file.
      */
     public function render($template) {
-        // Get the template path and extract and extract
-        // the variables assigned to the template.
+
         $template = TEMPLATES.'/'.$template;
-        if ($this->variables)
+        if ($this->variables) {
             extract($this->variables);
+        }
+        
         $this->variables = NULL;
-        // Start output buffering and get the contents.
+
         ob_start();
         include $template;
         echo ob_get_clean();
